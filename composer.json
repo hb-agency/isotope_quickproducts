@@ -34,9 +34,6 @@
             }
         }
     },
-    "replace": {
-        "hb-agency/contao_zurb_foundation":"self.version"
-    },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
