@@ -3,10 +3,10 @@
 /**
  * Quick Product Content Element for Isotope eCommerce and Contao Open Source CMS
  *
- * Copyright (C) 2014 HB Agency
+ * Copyright (C) 2015 Rhyme.Digital
  *
  * @package    Isotope_Quickproducts
- * @link       http://www.hbagency.com
+ * @link       http://rhyme.digital
  * @license    http://opensource.org/licenses/lgpl-3.0.html
  */
 

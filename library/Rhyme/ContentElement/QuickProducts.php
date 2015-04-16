@@ -3,10 +3,10 @@
 /**
  * Quick Product Content Element for Isotope eCommerce and Contao Open Source CMS
  *
- * Copyright (C) 2014 HB Agency
+ * Copyright (C) 2015 Rhyme.Digital
  *
  * @package    Isotope_Quickproducts
- * @link       http://www.hbagency.com
+ * @link       http://rhyme.digital
  * @license    http://opensource.org/licenses/lgpl-3.0.html
  */
 
@@ -14,7 +14,7 @@
 /**
  * Run in a custom namespace, so the class can be replaced
  */
-namespace HBAgency\ContentElement;
+namespace Rhyme\ContentElement;
 
 use Isotope\ContentElement\ContentElement as Iso_Element;
 use Haste\Haste;
@@ -28,9 +28,9 @@ use Isotope\RequestCache\Sort;
  * Class QuickProducts
  *
  * Provide methods to display Isotope products as content elements.
- * @copyright  HB Agency 2014
- * @author     Blair Winans <bwinans@hbagency.com>
- * @author     Adam Fisher <afisher@hbagency.com>
+ * @copyright  Rhyme.Digital 2015
+ * @author     Blair Winans <blair@rhyme.digital>
+ * @author     Adam Fisher <adam@rhyme.digital>
  */
 class QuickProducts extends Iso_Element
 {
