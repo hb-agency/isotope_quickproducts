@@ -3,10 +3,10 @@
 /**
  * Quick Product Content Element for Isotope eCommerce and Contao Open Source CMS
  *
- * Copyright (C) 2014 HB Agency
+ * Copyright (C) 2015 Rhyme.Digital
  *
  * @package    Isotope_Quickproducts
- * @link       http://www.hbagency.com
+ * @link       http://rhyme.digital
  * @license    http://opensource.org/licenses/lgpl-3.0.html
  */
  
@@ -16,5 +16,5 @@
  */
 array_insert($GLOBALS['TL_CTE']['isotope'], 1, array
 (
-	'isotope_quick' => 'HBAgency\ContentElement\QuickProducts'
+	'isotope_quick' => 'Rhyme\ContentElement\QuickProducts'
 ));  

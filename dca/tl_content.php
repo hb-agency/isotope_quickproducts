@@ -3,17 +3,20 @@
 /**
  * Quick Product Content Element for Isotope eCommerce and Contao Open Source CMS
  *
- * Copyright (C) 2014 HB Agency
+ * Copyright (C) 2015 Rhyme.Digital
  *
  * @package    Isotope_Quickproducts
- * @link       http://www.hbagency.com
+ * @link       http://rhyme.digital
  * @license    http://opensource.org/licenses/lgpl-3.0.html
  */
+
+\Controller::loadDataContainer('tl_module');
+\Controller::loadLanguageFile('tl_module');
 
 /**
  * Palettes
  */
-$GLOBALS['TL_DCA']['tl_content']['palettes']['isotope_quick'] = '{type_legend},type,headline;{include_legend},iso_products;{config_legend},iso_listingSortField,iso_listingSortDirection,iso_cols,iso_use_quantity,iso_buttons;{template_settings},iso_gallery,iso_list_layout;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['isotope_quick'] = '{type_legend},type,headline;{include_legend},iso_products;{config_legend},iso_listingSortField,iso_listingSortDirection,iso_cols,iso_use_quantity,iso_buttons,iso_addProductJumpTo;{template_settings},iso_gallery,iso_list_layout;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop';
 
 
 /**
@@ -125,4 +128,4 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['iso_cart_jumpTo'] = array
     'relation'                  => array('type'=>'hasOne', 'load'=>'lazy'),
 );
 
-
+$GLOBALS['TL_DCA']['tl_content']['fields']['iso_addProductJumpTo'] = $GLOBALS['TL_DCA']['tl_module']['fields']['iso_addProductJumpTo'];
