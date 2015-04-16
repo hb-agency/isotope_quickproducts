@@ -18,7 +18,7 @@
         "contao/core": ">=3.3.0,<4.0.0-dev",
         "contao-community-alliance/composer-installer": "*",
         "isotope/isotope-core": ">=1.0.1",
-        "terminal42/contao-namespace-class-loader" : "~ 1.0"
+        "terminal42/contao-namespace-class-loader": "~1.0"
     },
     "autoload": {
         "psr-0": {
