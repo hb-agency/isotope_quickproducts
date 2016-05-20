@@ -35,7 +35,8 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['iso_products'] = array
         'tl_class'                  => 'clr',
         'foreignTable'              => 'tl_iso_product',
         'fieldType'                 => 'checkbox',
-        'listFields'                => array('type'=>"(SELECT name FROM " . \Isotope\Model\ProductType::getTable() . " WHERE " . \Isotope\Model\Product::getTable() . ".type=" . \Isotope\Model\ProductType::getTable() . ".id)", 'name', 'sku'),
+/*        'listFields'                => array('type'=>"(SELECT name FROM " . \Isotope\Model\ProductType::getTable() . " WHERE " . \Isotope\Model\Product::getTable() . ".type=" . \Isotope\Model\ProductType::getTable() . ".id)", 'name', 'sku'),*/
+        'listFields'                => array('type'=>"type", 'name', 'sku'),
         'searchFields'              => array('name', 'alias', 'sku', 'description'),
         'sqlWhere'                  => 'pid=0',
         'searchLabel'               => 'Search products',
