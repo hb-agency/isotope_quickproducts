@@ -69,6 +69,8 @@ class QuickProducts extends Iso_Element
 		// No products found
         if (!is_array($arrProducts) || empty($arrProducts)) {
 
+            global $objPage;
+
             // Do not index or cache the page
             $objPage->noSearch = 1;
             $objPage->cache    = 0;
