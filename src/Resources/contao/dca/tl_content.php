@@ -16,7 +16,7 @@
 /**
  * Palettes
  */
-$GLOBALS['TL_DCA']['tl_content']['palettes']['isotope_quick'] = '{type_legend},type,headline;{include_legend},iso_products;{config_legend},iso_listingSortField,iso_listingSortDirection,iso_cols,iso_use_quantity,iso_buttons,iso_addProductJumpTo;{template_settings},iso_gallery,iso_list_layout;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['isotope_quick'] = '{type_legend},type,headline;{include_legend},iso_products;{config_legend},iso_listingSortField,iso_listingSortDirection,iso_cols,iso_use_quantity,iso_buttons,iso_addProductJumpTo;{template_legend},customTpl,iso_gallery,iso_list_layout;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop';
 
 
 /**
