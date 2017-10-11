@@ -9,12 +9,12 @@
  * @link       http://rhyme.digital
  * @license    http://opensource.org/licenses/lgpl-3.0.html
  */
- 
- 
- /**
- * Content elements
+
+/**
+ * Register the templates
  */
-array_insert($GLOBALS['TL_CTE']['isotope'], 1, array
+TemplateLoader::addFiles(array
 (
-	'isotope_quick' => 'Rhyme\ContentElement\QuickProducts'
-));  
+    //Content Elements
+    'ce_iso_quickproducts'      => 'system/modules/isotope_quickproducts/templates/element',
+));
