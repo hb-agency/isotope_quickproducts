@@ -22,6 +22,7 @@ use Haste\Http\Response\HtmlResponse;
 use Isotope\ContentElement\ContentElement as Iso_Element;
 use Isotope\Model\Product;
 use Isotope\RequestCache\Sort;
+use Isotope\Frontend;
 
 /**
  * Class QuickProducts
@@ -163,23 +164,44 @@ class QuickProducts extends Iso_Element
     {
         global $objPage;
         global $objIsotopeListPage;
+        $productCategories = $objProduct->getCategories(true);
+        $arrCategories     = array();
 
-        $arrCategories = $objProduct->getCategories();
-
-        // If our current category scope does not match with any product category, use the first product category in the current root page
-        if (empty($arrCategories)) {
-            $arrCategories = array_intersect($objProduct->getCategories(),
-                \Database::getInstance()->getChildRecords($objPage->rootId, $objPage->getTable()));
+        if ($this->iso_category_scope != 'current_category'
+            && $this->iso_category_scope != ''
+            && $objPage->alias != 'index'
+        ) {
+            $arrCategories = array_intersect(
+                $productCategories,
+                $this->findCategories()
+            );
         }
 
-        foreach ($arrCategories as $intCategory) {
-            $objCategory = \PageModel::findByPk($intCategory);
+        // If our current category scope does not match with any product category,
+        // use the first allowed product category in the current root page
+        if (empty($arrCategories)) {
+            $arrCategories = $productCategories;
+        }
 
-            if ($objCategory->alias == 'index' && count($arrCategories) > 1) {
-                continue;
+        $arrCategories = Frontend::getPagesInCurrentRoot(
+            $arrCategories,
+            \FrontendUser::getInstance()
+        );
+
+        if (!empty($arrCategories)
+            && ($objCategories = \PageModel::findMultipleByIds($arrCategories)) !== null
+        ) {
+            $blnMoreThanOne = $objCategories->count() > 1;
+            foreach ($objCategories as $objCategory) {
+
+                if ($objCategory->alias == 'index'
+                    && $blnMoreThanOne
+                ) {
+                    continue;
+                }
+
+                return $objCategory;
             }
-
-            return $objCategory;
         }
 
         return $objIsotopeListPage ?: $objPage;
