@@ -14,4 +14,4 @@
  * Content elements
  */
 $GLOBALS['TL_LANG']['CTE']['isotope']    = 'Isotope eCommerce';
-$GLOBALS['TL_LANG']['CTE']['isotope_quick'] = array('Quick Products', 'Select individual products to drop as a content element.');
+$GLOBALS['TL_LANG']['CTE']['iso_quickproducts'] = array('Quick Products', 'Select individual products to drop as a content element.');

@@ -16,5 +16,5 @@
  */
 array_insert($GLOBALS['TL_CTE']['isotope'], 1, array
 (
-	'isotope_quick' => 'Rhyme\QuickProducts\ContentElement\QuickProducts'
+	'iso_quickproducts' => 'Rhyme\QuickProducts\ContentElement\QuickProducts'
 ));  
