@@ -24,7 +24,12 @@
         "contao/manager-plugin": "<2.0 || >=3.0"
     },
     "extra": {
-        "contao-manager-plugin": "Rhyme\\QuickProducts\\ContaoManagerPlugin"
+        "contao-manager-plugin": "Rhyme\\QuickProducts\\ContaoManagerPlugin",
+        "contao": {
+            "runonce": [
+                "src/runonce/runonce.php"
+            ]
+        }
     },
     "autoload": {
         "psr-4": {
