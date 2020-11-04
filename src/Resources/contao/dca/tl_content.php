@@ -38,7 +38,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['iso_products'] = array
 /*        'listFields'                => array('type'=>"(SELECT name FROM " . \Isotope\Model\ProductType::getTable() . " WHERE " . \Isotope\Model\Product::getTable() . ".type=" . \Isotope\Model\ProductType::getTable() . ".id)", 'name', 'sku'),*/
         'listFields'                => array('type'=>"type", 'name', 'sku'),
         'searchFields'              => array('name', 'alias', 'sku', 'description'),
-        'sqlWhere'                  => 'pid=0',
+        'sqlWhere'                  => '',
         'searchLabel'               => 'Search products',
     ),
 );
