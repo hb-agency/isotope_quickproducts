@@ -129,4 +129,13 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['iso_cart_jumpTo'] = array
     'relation'                  => array('type'=>'hasOne', 'load'=>'lazy'),
 );
 
-$GLOBALS['TL_DCA']['tl_content']['fields']['iso_addProductJumpTo'] = $GLOBALS['TL_DCA']['tl_module']['fields']['iso_addProductJumpTo'];
+$GLOBALS['TL_DCA']['tl_content']['fields']['iso_addProductJumpTo'] = array(
+    'label'                     => &$GLOBALS['TL_LANG']['tl_module']['iso_addProductJumpTo'],
+    'exclude'                   => true,
+    'inputType'                 => 'pageTree',
+    'foreignKey'                => 'tl_page.title',
+    'eval'                      => array('fieldType'=>'radio', 'tl_class'=>'clr'),
+    'explanation'               => 'jumpTo',
+    'sql'                       => "int(10) unsigned NOT NULL default '0'",
+    'relation'                  => array('type'=>'hasOne', 'load'=>'lazy'),
+);
