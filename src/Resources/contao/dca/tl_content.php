@@ -24,7 +24,7 @@ $GLOBALS['TL_DCA']['tl_content']['palettes']['iso_quickproducts'] = '{type_legen
  */
 $GLOBALS['TL_DCA']['tl_content']['fields']['iso_products'] = array
 (
-	'label'                         => &$GLOBALS['TL_LANG']['tl_content']['iso_products'],
+    'label'                         => &$GLOBALS['TL_LANG']['tl_content']['iso_products'],
     'exclude'                       => true,
     'inputType'                     => 'tableLookup',
     'sql'                           => "blob NULL",
@@ -39,7 +39,8 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['iso_products'] = array
         'listFields'                => array('type'=>"type", 'name', 'sku'),
         'searchFields'              => array('name', 'alias', 'sku', 'description'),
         'sqlWhere'                  => '',
-        'searchLabel'               => 'Search products',
+        'searchLabel'               => &$GLOBALS['TL_LANG']['tl_content']['iso_products_searchLabel'],
+        'enableSorting'             => true,
     ),
 );
 

@@ -133,7 +133,12 @@ class QuickProducts extends Iso_Element
 
         $arrSorting = $this->getSorting();
 
-        $objProducts = Product::findAvailableByIds($arrProducts, array('sorting' => $arrSorting));
+        $sorting = array('sorting' => $arrSorting);
+        if(!count($arrSorting)) {
+            $sorting = array('order' => sprintf('FIELD(tl_iso_product.id, %s)', implode(',', $arrProducts)));
+        }
+
+        $objProducts = Product::findAvailableByIds($arrProducts, $sorting);
 
         return (null === $objProducts) ? array() : $objProducts->getModels();
     }
