@@ -3,7 +3,7 @@
 /**
  * Quick Product Content Element for Isotope eCommerce and Contao Open Source CMS
  *
- * Copyright (C) 2015 Rhyme.Digital
+ * Copyright (C) 2015 - 2022 Rhyme.Digital
  *
  * @package    Isotope_Quickproducts
  * @link       http://rhyme.digital
@@ -71,7 +71,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['iso_use_quantity'] = array
     'label'                     => &$GLOBALS['TL_LANG']['tl_content']['iso_use_quantity'],
     'exclude'                   => true,
     'inputType'                 => 'checkbox',
-    'eval'                      => array('tl_class'=>'w50'),
+    'eval'                      => array('tl_class'=>'w50 m12'),
     'sql'                       => "char(1) NOT NULL default ''",
 );
 
