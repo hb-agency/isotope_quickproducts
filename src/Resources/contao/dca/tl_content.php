@@ -3,7 +3,7 @@
 /**
  * Quick Product Content Element for Isotope eCommerce and Contao Open Source CMS
  *
- * Copyright (C) 2015 Rhyme.Digital
+ * Copyright (C) 2015 - 2022 Rhyme.Digital
  *
  * @package    Isotope_Quickproducts
  * @link       http://rhyme.digital
