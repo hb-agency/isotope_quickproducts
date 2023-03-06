@@ -16,7 +16,7 @@
 /**
  * Palettes
  */
-$GLOBALS['TL_DCA']['tl_content']['palettes']['isotope_quick'] = '{type_legend},type,headline;{include_legend},iso_products;{config_legend},iso_listingSortField,iso_listingSortDirection,iso_cols,iso_use_quantity,iso_buttons,iso_addProductJumpTo;{template_settings},customTpl,iso_gallery,iso_list_layout;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['iso_quickproducts'] = '{type_legend},type,headline;{include_legend},iso_products;{config_legend},iso_listingSortField,iso_listingSortDirection,iso_cols,iso_use_quantity,iso_buttons,iso_addProductJumpTo;{template_legend},customTpl,iso_gallery,iso_list_layout;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop';
 
 
 /**
@@ -38,7 +38,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['iso_products'] = array
 /*        'listFields'                => array('type'=>"(SELECT name FROM " . \Isotope\Model\ProductType::getTable() . " WHERE " . \Isotope\Model\Product::getTable() . ".type=" . \Isotope\Model\ProductType::getTable() . ".id)", 'name', 'sku'),*/
         'listFields'                => array('type'=>"type", 'name', 'sku'),
         'searchFields'              => array('name', 'alias', 'sku', 'description'),
-        'sqlWhere'                  => 'pid=0',
+        'sqlWhere'                  => '',
         'searchLabel'               => 'Search products',
     ),
 );
@@ -129,4 +129,13 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['iso_cart_jumpTo'] = array
     'relation'                  => array('type'=>'hasOne', 'load'=>'lazy'),
 );
 
-$GLOBALS['TL_DCA']['tl_content']['fields']['iso_addProductJumpTo'] = $GLOBALS['TL_DCA']['tl_module']['fields']['iso_addProductJumpTo'];
+$GLOBALS['TL_DCA']['tl_content']['fields']['iso_addProductJumpTo'] = array(
+    'label'                     => &$GLOBALS['TL_LANG']['tl_module']['iso_addProductJumpTo'],
+    'exclude'                   => true,
+    'inputType'                 => 'pageTree',
+    'foreignKey'                => 'tl_page.title',
+    'eval'                      => array('fieldType'=>'radio', 'tl_class'=>'clr'),
+    'explanation'               => 'jumpTo',
+    'sql'                       => "int(10) unsigned NOT NULL default '0'",
+    'relation'                  => array('type'=>'hasOne', 'load'=>'lazy'),
+);

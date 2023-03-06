@@ -11,7 +11,10 @@
  */
 
 /**
- * Content elements
+ * Register the templates
  */
-$GLOBALS['TL_LANG']['CTE']['isotope']    = 'Isotope eCommerce';
-$GLOBALS['TL_LANG']['CTE']['isotope_quick'] = array('Quick Products', 'Select individual products to drop as a content element.');
+TemplateLoader::addFiles(array
+(
+    //Content Elements
+    'ce_iso_quickproducts'      => 'system/modules/isotope_quickproducts/templates/element',
+));

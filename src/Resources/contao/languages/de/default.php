@@ -9,12 +9,9 @@
  * @link       http://rhyme.digital
  * @license    http://opensource.org/licenses/lgpl-3.0.html
  */
- 
- 
- /**
+
+/**
  * Content elements
  */
-array_insert($GLOBALS['TL_CTE']['isotope'], 1, array
-(
-	'isotope_quick' => 'Rhyme\ContentElement\QuickProducts'
-));  
+$GLOBALS['TL_LANG']['CTE']['isotope']    = 'Isotope eCommerce';
+$GLOBALS['TL_LANG']['CTE']['iso_quickproducts'] = array('Quick Products', 'Select individual products to drop as a content element.');
