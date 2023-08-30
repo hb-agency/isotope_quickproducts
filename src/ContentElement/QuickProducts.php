@@ -17,6 +17,7 @@
 
 namespace Rhyme\QuickProducts\ContentElement;
 
+use Contao\StringUtil;
 use Haste\Generator\RowClass;
 use Haste\Http\Response\HtmlResponse;
 use Isotope\ContentElement\ContentElement as Iso_Element;
@@ -89,7 +90,7 @@ class QuickProducts extends Iso_Element
                 'module' => $this,
                 'template' => ($this->iso_list_layout ?: $objProduct->getRelated('type')->list_template),
                 'gallery' => ($this->iso_gallery ?: $objProduct->getRelated('type')->list_gallery),
-                'buttons' => deserialize($this->iso_buttons, true),
+                'buttons' => StringUtil::deserialize($this->iso_buttons, true),
                 'useQuantity' => $this->iso_use_quantity,
                 'jumpTo' => $this->findJumpToPage($objProduct),
             );
@@ -99,11 +100,11 @@ class QuickProducts extends Iso_Element
                 $objResponse->send();
             }
 
-            $arrCSS = deserialize($objProduct->cssID, true);
+            $arrCSS = StringUtil::deserialize($objProduct->cssID, true);
 
             $arrBuffer[] = array(
-                'cssID' => ($arrCSS[0] != '') ? ' id="' . $arrCSS[0] . '"' : '',
-                'class' => trim('product ' . ($objProduct->isNew() ? 'new ' : '') . $arrCSS[1]),
+                'cssID' => ( \isset($arrCSS[0]) && $arrCSS[0] != '') ? ' id="' . $arrCSS[0] . '"' : '',
+                'class' => trim('product ' . ($objProduct->isNew() ? 'new ' : '') . ($arrCSS[1] ?? '')),
                 'html' => $objProduct->generate($arrConfig),
                 'product' => $objProduct,
             );
@@ -129,7 +130,7 @@ class QuickProducts extends Iso_Element
      */
     protected function findProducts()
     {
-        $arrProducts = deserialize($this->iso_products);
+        $arrProducts = StringUtil::deserialize($this->iso_products);
 
         $arrSorting = $this->getSorting();
 
