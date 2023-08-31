@@ -103,7 +103,7 @@ class QuickProducts extends Iso_Element
             $arrCSS = StringUtil::deserialize($objProduct->cssID, true);
 
             $arrBuffer[] = array(
-                'cssID' => ( \isset($arrCSS[0]) && $arrCSS[0] != '') ? ' id="' . $arrCSS[0] . '"' : '',
+                'cssID' => ( isset($arrCSS[0]) && $arrCSS[0] != '') ? ' id="' . $arrCSS[0] . '"' : '',
                 'class' => trim('product ' . ($objProduct->isNew() ? 'new ' : '') . ($arrCSS[1] ?? '')),
                 'html' => $objProduct->generate($arrConfig),
                 'product' => $objProduct,
